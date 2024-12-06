@@ -2,19 +2,19 @@ import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@/test/utils';
 import { ProfileForm } from '../ProfileForm';
 
-const mockProfile = {
+const mockProfile: ProfileData = {
   id: '1',
-  name: 'Test User',
-  email: 'test@example.com',
-  role: 'teacher',
+  name: 'John Doe',
+  email: 'john@example.com',
+  role: 'student' as UserRole,
   bio: 'Test bio',
   phone: '123-456-7890',
   location: 'Test City',
   socialLinks: {
     twitter: 'https://twitter.com/test',
     linkedin: 'https://linkedin.com/test',
-    github: 'https://github.com/test',
-  },
+    github: 'https://github.com/test'
+  }
 };
 
 describe('ProfileForm', () => {

@@ -88,7 +88,11 @@ export function SettingsForm({ settings }: { settings: UserSettings }) {
             <Label htmlFor="language">Language</Label>
             <Select
               defaultValue={settings.language}
-              onValueChange={(value) => register('language').onChange(value)}
+              onValueChange={(value) => {
+                register('language').onChange({
+                  target: { value }
+                });
+              }}
             >
               <SelectTrigger>
                 <SelectValue placeholder="Select language" />
